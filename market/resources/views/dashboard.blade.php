@@ -7,34 +7,24 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <table class="table-auto border-collapse border border-green-800">
-                        <thead>
-                          <tr>
-                            <th class="w-1/2 ...">Title</th>
-                            <th class="w-1/4 ...">Author</th>
-                            <th class="w-1/4 ...">Views</th>
-                          </tr>
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg ">
+                <div class="p-6 bg-white border-b border-gray-200 flex justify-center">
+                    <table class="text-left w-full">
+                        <thead class="bg-black flex text-white w-full">
+                            <tr class="flex w-full mb-4">
+                                <th class="w-2/4 p-4">Name</th>
+                                <th class="w-2/4 p-4">Price</th>
+                            </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td class="border border-green-800 p-2">Intro to CSS</td>
-                            <td class="border border-green-800 p-2">Adam</td>
-                            <td class="border border-green-800 p-2">858</td>
-                          </tr>
-                          <tr>
-                            <td class="border border-green-800">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                            <td class="border border-green-800">Adam</td>
-                            <td class="border border-green-800">112</td>
-                          </tr>
-                          <tr>
-                            <td class="border border-green-800">Intro to JavaScript</td>
-                            <td class="border border-green-800">Chris</td>
-                            <td class="border border-green-800">1,280</td>
-                          </tr>
+                        <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
+                            @foreach ($data as $item)
+                            <tr class="flex w-full mb-4">
+                                <td class="w-2/4 p-4">{{$item->name}}</td>
+                                <td class="w-2/4 p-4">{{$item->price}}</td>
+                            </tr>
+                            @endforeach
                         </tbody>
-                      </table>
+                    </table>
 
                 </div>
             </div>
